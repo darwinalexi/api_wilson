@@ -1,7 +1,8 @@
 import mongoose from 'mongoose'
 
- export const AlquilerDAG = mongoose.Schema(
+ const AlquilerDAG = mongoose.Schema(
     {
+          
         idialquiler:{
           type: Number,
           required:true
@@ -43,5 +44,4 @@ import mongoose from 'mongoose'
       timestamps:true
      }
 )
-const alquiler=mongoose.model("Alquiler",AlquilerDAG)
-export default alquiler
+export const alquiler=mongoose.model("alquileres",AlquilerDAG)

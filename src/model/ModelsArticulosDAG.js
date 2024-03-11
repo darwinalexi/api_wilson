@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-export const ArticulosDAG = mongoose.Schema(
+ const ArticulosDAG = mongoose.Schema(
     {
         idarticulo:{
           type: Number,
@@ -21,4 +21,4 @@ export const ArticulosDAG = mongoose.Schema(
       timestamps:true
      }
 )
-export const articulo=mongoose.model("Alquiler", ArticulosDAG)
+export const articulo=mongoose.model("Articulos", ArticulosDAG)

@@ -1,4 +1,4 @@
-import {ArticulosDAG, articulo} from '../model/ModelsArticulosDAG.js'
+import {articulo} from '../model/ModelsArticulosDAG.js'
 
 export const createarticlesDAG = async (req, res) => {
     try {
