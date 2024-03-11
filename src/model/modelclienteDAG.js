@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
-//se crea los modelos para mandar la informacion  a mongo mediante plantillas similares
-export const Cliente = mongoose.Schema(
+//se crea los modelos para mandar la informacion  a mongo mediante plantillas similare
+const Cliente = mongoose.Schema(
     {
         Identificacion:{
           type: String,
@@ -29,5 +29,5 @@ export const Cliente = mongoose.Schema(
       timestamps:true
      }
 )
-const Clientes=mongoose.model("Alquiler",Cliente)
+const Clientes=mongoose.model("Clientes",Cliente)
 export default Clientes

@@ -3,10 +3,11 @@ import bodyParser from 'body-parser'
 import mongoose from 'mongoose';
 import { ruta } from './src/router/router.interesesDAG.js';
 import { routeArcticleDAG } from './src/router/router.articulosDAG.js';
+import { rutaclienteDAG } from './src/router/router.clientesDAG.js';
 
 const server= express()
-const port = 4000;
-const url = "mongodb+srv://darwinalexisguerrerobaos:7JN6vVRkSTXsyo3Q@apinode.gghsldz.mongodb.net/?retryWrites=true&w=majority&appName=Apinode" 
+const port = 3000;
+const url = "mongodb+srv://darwinalexisguerrerobaos:oFGmgjpxWHZDecqU@apinode.gghsldz.mongodb.net/"
 server.use(bodyParser.json())
 server.use(bodyParser.urlencoded({extended:false}))
 
@@ -16,6 +17,7 @@ server.listen(port, ()=>{
 
 server.use(ruta)
 server.use(routeArcticleDAG)
+server.use(rutaclienteDAG)
 
 
 /*se crea la conexion a la base de datos */
