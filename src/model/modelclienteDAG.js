@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 const Cliente = mongoose.Schema(
     {
         Identificacion:{
-          type: String,
+          type: Number,
           require:true,
           integer:true
         },

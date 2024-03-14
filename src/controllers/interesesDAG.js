@@ -1,7 +1,14 @@
+import { validationResult } from "express-validator";
 import Intereses from "../model/ModelinteresesDAG.js";
 
 //se crea lo interes 
 export const createInteresDAG = async (req, res) => {
+
+    const error = validationResult(req)
+    if (!error.isEmpty()) {
+        return res.status(404).json({error})
+    }
+
     try {
         const intereses = await Intereses.create(req.body);
         // Si la creación fue exitosa, intereses contendrá el documento creado.
@@ -70,6 +77,11 @@ export const delete_for_idDAG = async (req, res) => {
 
 export const update_for_idDAG = async (req, res) => {
     try {
+const error = validationResult(req)
+if (!error.isEmpty()) {
+    return res.status(404).json({error})
+}
+
         const { _id } = req.params;
         const intereses = await Intereses.findByIdAndUpdate(_id, req.body);
 

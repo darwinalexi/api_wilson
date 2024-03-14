@@ -1,8 +1,18 @@
 import { alquiler } from "../model/ModelsAlquilersDAG.js";
+import { validationResult } from "express-validator";
 
 
 export const createalqulerDAG = async (req, res) => {
     try {
+//se crea para que muestre los errores
+        const error = validationResult(req)
+
+        if (!error.isEmpty()) {
+            return res.status(404).json({error})
+        }
+
+
+
         const alquilere = await alquiler.create(req.body);
         res.status(201).json({
             "mensaje": "se creó",
@@ -48,6 +58,12 @@ export const show_alquilers_for_id_DAG = async (req, res) => {
 
 export const update_alquilers_for_id_DAG = async (req, res) => {
     try {
+
+        const error = validationResult(req)
+        if (!error.isEmpty()) {
+            return res.status(404).json({error})
+        }
+        
         const {_id}=req.params
         const alq = await alquiler.findByIdAndUpdate(_id, req.body, {new:true});
         if (!alq) {

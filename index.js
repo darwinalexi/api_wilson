@@ -5,6 +5,7 @@ import { ruta } from './src/router/router.interesesDAG.js';
 import { routeArcticleDAG } from './src/router/router.articulosDAG.js';
 import { rutaclienteDAG } from './src/router/router.clientesDAG.js';
 import { rutaalqulierDAG } from './src/router/router.alquiler.js';
+import { rutalogin } from './src/router/authDAG.js';
 
 const server= express()
 const port = 3000;
@@ -20,6 +21,7 @@ server.use(ruta)
 server.use(routeArcticleDAG)
 server.use(rutaclienteDAG)
 server.use(rutaalqulierDAG)
+server.use(rutalogin)
 
 
 /*se crea la conexion a la base de datos  en mongo*/

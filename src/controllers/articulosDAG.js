@@ -1,7 +1,14 @@
+import { validationResult } from 'express-validator';
 import {articulo} from '../model/ModelsArticulosDAG.js'
 
 export const createarticlesDAG = async (req, res) => {
     try {
+        const error = validationResult(req)
+
+        if (!error.isEmpty()) {
+           return res.status(404).json({error})
+        }
+
         const intereses = await articulo.create(req.body);
         // Si la creación fue exitosa, intereses contendrá el documento creado.
         // No necesitas verificar affectedRows porque Mongoose no lo usa.
@@ -52,6 +59,13 @@ export const show_articlesDAG_for_id = async (req, res) => {
 
 export const update_article_for_idDAG = async (req, res) => {
     try {
+        const error = validationResult(req)
+
+        if (!error.isEmpty()) {
+           return res.status(404).json({error})
+        }
+
+
         const { _id } = req.params;
         const update_article = await articulo.findByIdAndUpdate(_id, req.body, { new: true });
 

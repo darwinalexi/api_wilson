@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const interesesDAG = new mongoose.Schema({
-    Idintereses: {
+    Idinteres: {
         type: Number,
         required: true,
         integer:true

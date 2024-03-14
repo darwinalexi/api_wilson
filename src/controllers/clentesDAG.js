@@ -1,8 +1,15 @@
+import { validationResult } from 'express-validator'
 import Clientes from '../model/modelclienteDAG.js'
 
 export const createClienteDAG = async(req, res)=>{
 
 try {
+    const error= validationResult(req)
+
+    if (!error.isEmpty()) {
+        return res.status(404).json({error})
+    }
+
     const create = await Clientes.create(req.body)
 if (create) {
     res.status(200).json({
@@ -78,6 +85,13 @@ export const delete_for_idDAG = async (req, res) => {
 
 export const updatecliente_for_idDAG = async (req, res) => {
     try {
+
+        const error= validationResult(req)
+
+  if (!error.isEmpty()) {
+            // Cambia el código de estado a 400 para errores de validación
+            return res.status(400).json({ errors: error.array() });
+        }
         const { _id } = req.params;
         const consulta = await Clientes.findByIdAndUpdate(_id, req.body, { new: true });
 
