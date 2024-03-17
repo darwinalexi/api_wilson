@@ -65,18 +65,18 @@ export const show_clienteDAG_for_id = async (req, res) => {
 export const delete_for_idDAG = async (req, res) => {
     try {
         const { _id } = req.params;
-        const intereses = await Clientes.findByIdAndDelete(_id);
+        const cliente = await Clientes.findByIdAndDelete(_id);
 
-        if (!intereses) {
+        if (!cliente) {
             // Si no se encontró el interés para eliminar, envía un mensaje de error
             return res.status(404).json({
-                "mensaje": "no se encontró un interés para eliminar"
+                "mensaje": "no se encontró un cliente para eliminar"
             });
         }
         // Si el interés fue encontrado y eliminado exitosamente, envía un mensaje de éxito
         res.status(200).json({
-            "mensaje": "interés eliminado exitosamente",
-            "interes": intereses
+            "mensaje": "cliente eliminado exitosamente",
+            "cliente": cliente
         });
     } catch (error) {
         res.status(500).json({ message: error.message });

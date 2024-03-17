@@ -24,6 +24,14 @@ server.use(rutaalqulierDAG)
 server.use(rutalogin)
 
 
+server.use(express.static('./public'))
+server.set('view engine', 'ejs');
+server.set('views', './view/');
+server.get('/document', (req, res) => {
+    res.render('document.ejs'); 
+});
+
+
 /*se crea la conexion a la base de datos  en mongo*/
 mongoose.connect(url)
 .then(()=>{

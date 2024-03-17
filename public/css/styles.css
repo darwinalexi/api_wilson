@@ -1,0 +1,26 @@
+*{
+    font-family: sans-serif;
+}
+td{
+    border: 1px black solid;
+    width: 100%;
+    font-family: "Damion", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+table{
+    border: 3px black solid;
+    width: 45%;
+}
+tr{
+    display: flex;
+    justify-content: center;
+}
+header{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-family: "Damion", cursive;
+  font-weight: 400;
+  font-style: normal;
+}

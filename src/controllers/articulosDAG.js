@@ -10,8 +10,6 @@ export const createarticlesDAG = async (req, res) => {
         }
 
         const intereses = await articulo.create(req.body);
-        // Si la creación fue exitosa, intereses contendrá el documento creado.
-        // No necesitas verificar affectedRows porque Mongoose no lo usa.
         res.status(201).json({
             "mensaje": "se creó",
         });

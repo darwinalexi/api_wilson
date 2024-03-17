@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Damion&family=Engagement&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <title>Documentación Api</title>
+</head>
+<body>
+    <header>
+        <h1>Documentación De La Api</h1>
+    </header>
+    <h1>Autenticación</h1>
+    <table>
+        <tr>
+            <td>ENPOINT DEL REGISTER</td>
+        </tr>
+        <tr>
+            <td>Requerimiento</td>
+            <td>No°1</td>
+        </tr>
+        <tr>
+            <td>Nombre del servicio</td>
+            <td>REGISTER</td>
+        </tr>
+        <tr>
+            <td>URL</td>
+            <td>/register</td>
+        </tr>
+        <tr>
+            <td>Descripción</td>
+            <td>se ingresa el usuario y clave para que quede registrado exitosamente</td>
+        </tr>
+        <tr>
+            <td>VERBO HTTPS</td>
+            <td>POST</td>
+        </tr>
+        <tr>
+            <td>HEADER</td>
+            <td>NULL</td>
+        </tr>
+        <tr>
+            <td>USUARIOS</td>
+            <td>NULL</td>
+        </tr>
+        <tr>
+            <td>PETICION BODY</td>
+            <td>{
+                "user":"adae@gmail.com",
+                "passwor":"3456"
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Rspuesta JSON</td>
+            <td>CORRECTO: res.status(201).json({
+                "mensaje": "se creó",
+            });INCORRECTO O ERROR:  res.status(500).json({
+                "mensaje":error
+            })</td>
+        </tr>
+        <tr>
+            <td>PROGRAMADOR</td>
+            <td>Darwin Guerrero</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <table>
+        <tr>
+            <td>ENPOINT DEL LOGIN</td>
+        </tr>
+        <tr>
+            <td>Requerimiento</td>
+            <td>No°2</td>
+        </tr>
+        <tr>
+            <td>Nombre del servicio</td>
+            <td>login</td>
+        </tr>
+        <tr>
+            <td>URL</td>
+            <td>/login</td>
+        </tr>
+        <tr>
+            <td>Descripción</td>
+            <td>se ingresa el usuario y clave para generar un token</td>
+        </tr>
+        <tr>
+            <td>VERBO HTTPS</td>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <td>HEADER</td>
+            <td>NULL</td>
+        </tr>
+        <tr>
+            <td>USUARIOS</td>
+            <td>NULL</td>
+        </tr>
+        <tr>
+            <td>PETICION BODY</td>
+            <td>{
+                "user":"adae@gmail.com",
+                "password":"3456"
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Rspuesta JSON</td>
+            <td>CORRECTO:   res.status(201).json({
+                "mensaje":token
+            })   INCORRECTO O ERROR: res.status(404).json({
+                "mensa":"credenciales incorrectas"
+            })</td>
+        </tr>
+        <tr>
+            <td>PROGRAMADOR</td>
+            <td>Darwin Guerrero</td>
+        </tr>
+    </table>
+    
+    <br>
+<h1>ALQUILER</h1>
+    <table>
+        <tr>
+            <td>ENPOINT DE CREAR UN ALQUILER</td>
+        </tr>
+        <tr>
+            <td>Requerimiento</td>
+            <td>No°3</td>
+        </tr>
+        <tr>
+            <td>Nombre del servicio</td>
+            <td>login</td>
+        </tr>
+        <tr>
+            <td>URL</td>
+            <td>/crearalquilerDAG</td>
+        </tr>
+        <tr>
+            <td>Descripción</td>
+            <td>se ingresa el idialquile, valor, fecha, mes, Descripción, cliente, articulos para registrar el ALQUILER</td>
+        </tr>
+        <tr>
+            <td>VERBO HTTPS</td>
+            <td>POST</td>
+        </tr>
+        <tr>
+            <td>HEADER</td>
+            <td> token</td>
+        </tr>
+        <tr>
+            <td>USUARIOS</td>
+            <td>NULL</td>
+        </tr>
+        <tr>
+            <td>PETICION BODY</td>
+            <td>{ "Idinteres":6,"alquiler":5, "mes":9, "fecha":"2013-09-04", "valor":89 }</td>
+        </tr>
+        <tr>
+            <td>Rspuesta JSON</td>
+            <td>CORRECTO:res.status(201).json({
+                "mensaje": "se creó",
+                "interes": intereses 
+                INCORRECTO O ERROR:res.status(500).json({ message: error.message });
+            });</td>
+        </tr>
+        <tr>
+            <td>PROGRAMADOR</td>
+            <td>Darwin Guerrero</td>
+        </tr>
+    </table>
+<br>
+    <table>
+        <tr>
+            <td>ENPOINT DE ACTUALIZAR UN ALQUILER</td>
+        </tr>
+        <tr>
+            <td>Requerimiento</td>
+            <td>No°4</td>
+        </tr>
+        <tr>
+            <td>Nombre del servicio</td>
+            <td>Actualizar Alquiler</td>
+        </tr>
+        <tr>
+            <td>URL</td>
+            <td>/actualizaralquilerDAG/:_id</td>
+        </tr>
+        <tr>
+            <td>Descripción</td>
+            <td>se ingresa el idialquile, valor, fecha, mes, Descripción, cliente, articulos para actualizar  el Alquiler registrado</td>
+        </tr>
+        <tr>
+            <td>VERBO HTTPS</td>
+            <td>PUT</td>
+        </tr>
+        <tr>
+            <td>HEADER</td>
+            <td> token</td>
+        </tr>
+        <tr>
+            <td>USUARIOS</td>
+            <td>NULL</td>
+        </tr>
+        <tr>
+            <td>PETICION BODY</td>
+            <td>{ "idialquiler":2, 
+                "valor":3456, 
+                "fecha":"2012-12-09",
+                "Mes":7, 
+                "Descripcion":"este es el alquiler", 
+                "Interes":23, 
+                "Cliente":6, 
+                "Articulo":5 
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Rspuesta JSON</td>
+            <td>CORRECTO:res.status(200).json({
+                "mensaje": "Alquiler actualizado exitosamente",
+            });  INCORRECTO O ERROR: return res.status(404).json({
+                    "mensaje": "no se encontró un alquiler para actualizar"
+                });</td>
+        </tr>
+        <tr>
+            <td>PROGRAMADOR</td>
+            <td>Darwin Guerrero</td>
+        </tr>
+    </table>
+    <br>
+    <table>
+        <tr>
+            <td>ENPOINT DE ELIMINAR UN ALQUILER</td>
+        </tr>
+        <tr>
+            <td>Requerimiento</td>
+            <td>No°5</td>
+        </tr>
+        <tr>
+            <td>Nombre del servicio</td>
+            <td>Eliminar Alquiler</td>
+        </tr>
+        <tr>
+            <td>URL</td>
+            <td>/eliminaralquilerDAG/:_id</td>
+        </tr>
+        <tr>
+            <td>Descripción</td>
+            <td>se elimina el Alquiler registrado</td>
+        </tr>
+        <tr>
+            <td>VERBO HTTPS</td>
+            <td>DELETE</td>
+        </tr>
+        <tr>
+            <td>HEADER</td>
+            <td> token</td>
+        </tr>
+        <tr>
+            <td>USUARIOS</td>
+            <td>NULL</td>
+        </tr>
+        <tr>
+            <td>PETICION BODY</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Rspuesta JSON</td>
+            <td>CORRECTO:res.status(200).json({
+                "mensaje": "Alquiler actualizado exitosamente",
+            });  INCORRECTO O ERROR: return res.status(404).json({
+                    "mensaje": "no se encontró un alquiler para actualizar"
+                });</td>
+        </tr>
+        <tr>
+            <td>PROGRAMADOR</td>
+            <td>Darwin Guerrero</td>
+        </tr>
+    </table>
+    
+    <br>
+    <table>
+        <tr>
+            <td>ENPOINT DE LISTAR UN ALQUILER</td>
+        </tr>
+        <tr>
+            <td>Requerimiento</td>
+            <td>No°6</td>
+        </tr>
+        <tr>
+            <td>Nombre del servicio</td>
+            <td>Listar Un Alquiler</td>
+        </tr>
+        <tr>
+            <td>URL</td>
+            <td>/buscaralqulerDAG/:_id</td>
+        </tr>
+        <tr>
+            <td>Descripción</td>
+            <td>se Busca Un  Alquiler registrado</td>
+        </tr>
+        <tr>
+            <td>VERBO HTTPS</td>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <td>HEADER</td>
+            <td> + token</td>
+        </tr>
+        <tr>
+            <td>USUARIOS</td>
+            <td>NULL</td>
+        </tr>
+        <tr>
+            <td>PETICION BODY</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Rspuesta JSON</td>
+            <td>CORRECTO:res.status(200).json(alq); 
+             INCORRECTO O ERROR:  res.status(404).json({
+                "mensaje": "no hay alquileres con"+_id
+            });</td>
+        </tr>
+        <tr>
+            <td>PROGRAMADOR</td>
+            <td>Darwin Guerrero</td>
+        </tr>
+    </table>
+
+    <br>
+    <table>
+        <tr>
+            <td>ENPOINT DE LISTAR TODOS ALQUILER</td>
+        </tr>
+        <tr>
+            <td>Requerimiento</td>
+            <td>No°7</td>
+        </tr>
+        <tr>
+            <td>Nombre del servicio</td>
+            <td>Listar Todos Alquiler</td>
+        </tr>
+        <tr>
+            <td>URL</td>
+            <td>/listaralquilerDAG</td>
+        </tr>
+        <tr>
+            <td>Descripción</td>
+            <td>se Lista Todos Los Alquileres registrados</td>
+        </tr>
+        <tr>
+            <td>VERBO HTTPS</td>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <td>HEADER</td>
+            <td> + token</td>
+        </tr>
+        <tr>
+            <td>USUARIOS</td>
+            <td>NULL</td>
+        </tr>
+        <tr>
+            <td>PETICION BODY</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Rspuesta JSON</td>
+            <td>CORRECTO:res.status(200).json(alq);  
+             INCORRECTO: res.status(404).json({
+                "mensaje": "no hay alquileres"
+            });ERROR.status(500).json({
+                "mensaje": error.message
+            }); </td>
+        </tr>
+        <tr>
+            <td>PROGRAMADOR</td>
+            <td>Darwin Guerrero</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <h1>Articulos</h1>
+
+    <table>
+        <tr>
+            <td>ENPOINT DE CREAR UN ARTICULO</td>
+        </tr>
+        <tr>
+            <td>Requerimiento</td>
+            <td>No°8</td>
+        </tr>
+        <tr>
+            <td>Nombre del servicio</td>
+            <td>Crear Un Articulo r</td>
+        </tr>
+        <tr>
+            <td>URL</td>
+            <td>/creararticuloDAG</td>
+        </tr>
+        <tr>
+            <td>Descripción</td>
+            <td>se ingresa los items que se piden para poder crear el articulo</td>
+        </tr>
+        <tr>
+            <td>VERBO HTTPS</td>
+            <td>POST</td>
+        </tr>
+        <tr>
+            <td>HEADER</td>
+            <td> + token</td>
+        </tr>
+        <tr>
+            <td>USUARIOS</td>
+            <td>NULL</td>
+        </tr>
+        <tr>
+            <td>PETICION BODY</td>
+            <td>{
+                "idarticulo":23,
+                "nombre":"la oya del norte",
+                "tipo":"informativo"
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Rspuesta JSON</td>
+            <td>CORRECTO:  res.status(201).json({
+                "mensaje": "se creó",
+            });INCORRECTO O ERROR:   res.status(500).json({ message: error.message });
+                </td>
+        </tr>
+        <tr>
+            <td>PROGRAMADOR</td>
+            <td>Darwin Guerrero</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <table>
+        <tr>
+            <td>ENPOINT DE ACTUALIZAR UN ARTICULO</td>
+        </tr>
+        <tr>
+            <td>Requerimiento</td>
+            <td>No°9</td>
+        </tr>
+        <tr>
+            <td>Nombre del servicio</td>
+            <td>Actualizar Un Articulo </td>
+        </tr>
+        <tr>
+            <td>URL</td>
+            <td>/actualizararticuloDAG/:_id</td>
+        </tr>
+        <tr>
+            <td>Descripción</td>
+            <td>se ingresa los items que se piden para poder Actualizar el articulo</td>
+        </tr>
+        <tr>
+            <td>VERBO HTTPS</td>
+            <td>PUT</td>
+        </tr>
+        <tr>
+            <td>HEADER</td>
+            <td>token</td>
+        </tr>
+        <tr>
+            <td>USUARIOS</td>
+            <td>NULL</td>
+        </tr>
+        <tr>
+            <td>PETICION BODY</td>
+            <td>{
+                "idarticulo":23,
+                "nombre":"la oya del norte",
+                "tipo":"informativo"
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Rspuesta JSON</td>
+            <td>CORRECTO:  res.status(200).json({
+                "mensaje": "articulo actualizado exitosamente",
+            });INCORRECTO : return res.status(404).json({
+                "mensaje": "no se encontró un interés para actualizar"
+            });ERROR:res.status(500).json({ message: error.message });
+                </td>
+        </tr>
+        <tr>
+            <td>PROGRAMADOR</td>
+            <td>Darwin Guerrero</td>
+        </tr>
+    </table>
+
+    <br>
+    <table>
+        <tr>
+            <td>ENPOINT DE ELIMINAR UN ARTICULO</td>
+        </tr>
+        <tr>
+            <td>Requerimiento</td>
+            <td>No°10</td>
+        </tr>
+        <tr>
+            <td>Nombre del servicio</td>
+            <td>Eliminar Un Articulo </td>
+        </tr>
+        <tr>
+            <td>URL</td>
+            <td>/borrararticuloDAG/:_id</td>
+        </tr>
+        <tr>
+            <td>Descripción</td>
+            <td> Elimina  un articulo</td>
+        </tr>
+        <tr>
+            <td>VERBO HTTPS</td>
+            <td>DELETE</td>
+        </tr>
+        <tr>
+            <td>HEADER</td>
+            <td>token</td>
+        </tr>
+        <tr>
+            <td>USUARIOS</td>
+            <td>NULL</td>
+        </tr>
+        <tr>
+            <td>PETICION BODY</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Rspuesta JSON</td>
+            <td>CORRECTO: return res.status(200).json({
+                "mensaje": " se encontró un articulo para eliminar"
+            });INCORRECTO :return res.status(404).json({
+                "mensaje": "no se encontró un articulo para eliminar"
+            });
+                </td>
+        </tr>
+        <tr>
+            <td>PROGRAMADOR</td>
+            <td>Darwin Guerrero</td>
+        </tr>
+    </table>
+    <br>
+    <table>
+        <tr>
+            <td>ENPOINT DE MOSTRAR UN ARTICULO</td>
+        </tr>
+        <tr>
+            <td>Requerimiento</td>
+            <td>No°11</td>
+        </tr>
+        <tr>
+            <td>Nombre del servicio</td>
+            <td>Mostrar Un Articulo </td>
+        </tr>
+        <tr>
+            <td>URL</td>
+            <td>/buscararticuloDAG/:_id</td>
+        </tr>
+        <tr>
+            <td>Descripción</td>
+            <td> Muestra un articulo</td>
+        </tr>
+        <tr>
+            <td>VERBO HTTPS</td>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <td>HEADER</td>
+            <td>token</td>
+        </tr>
+        <tr>
+            <td>USUARIOS</td>
+            <td>NULL</td>
+        </tr>
+        <tr>
+            <td>PETICION BODY</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Rspuesta JSON</td>
+            <td>CORRECTO:  res.status(200).json(articulos)
+                INCORRECTO :   res.status(404).json({
+                    "mensaje": "no se encontró el artículo"
+                });ERROR: res.status(500).json({
+                    "mensaje": error.message
+                });
+                </td>
+        </tr>
+        <tr>
+            <td>PROGRAMADOR</td>
+            <td>Darwin Guerrero</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <table>
+        <tr>
+            <td>ENPOINT LISTAR  ARTICULOS</td>
+        </tr>
+        <tr>
+            <td>Requerimiento</td>
+            <td>No°12</td>
+        </tr>
+        <tr>
+            <td>Nombre del servicio</td>
+            <td>Listar  Articulos </td>
+        </tr>
+        <tr>
+            <td>URL</td>
+            <td>/listararticuloDAG</td>
+        </tr>
+        <tr>
+            <td>Descripción</td>
+            <td> Listar Articulos</td>
+        </tr>
+        <tr>
+            <td>VERBO HTTPS</td>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <td>HEADER</td>
+            <td>token</td>
+        </tr>
+        <tr>
+            <td>USUARIOS</td>
+            <td>NULL</td>
+        </tr>
+        <tr>
+            <td>PETICION BODY</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Rspuesta JSON</td>
+            <td>CORRECTO: res.status(200).json(articulos);
+            INCORRECTO res.status(404).json({
+                "mensaje": "no hay articulos"
+            });ERROR:res.status(500).json({
+                "mensaje": error.message 
+            });
+                </td>
+        </tr>
+        <tr>
+            <td>PROGRAMADOR</td>
+            <td>Darwin Guerrero</td>
+        </tr>
+    </table>
+<br>
+    <h1>Clientes</h1>
+    <br>
+
+    <table>
+        <tr>
+            <td>ENPOINT DE CREAR cliente</td>
+        </tr>
+        <tr>
+            <td>Requerimiento</td>
+            <td>No°13</td>
+        </tr>
+        <tr>
+            <td>Nombre del servicio</td>
+            <td>Crear Cliente</td>
+        </tr>
+        <tr>
+            <td>URL</td>
+            <td>/crearClienteDAG<td>
+        </tr>
+        <tr>
+            <td>Descripción</td>
+            <td>se ingresa lo necesario para crear el cliente exitosamente</td>
+        </tr>
+        <tr>
+            <td>VERBO HTTPS</td>
+            <td>POST</td>
+        </tr>
+        <tr>
+            <td>HEADER</td>
+            <td>token</td>
+        </tr>
+        <tr>
+            <td>USUARIOS</td>
+            <td>NULL</td>
+        </tr>
+        <tr>
+            <td>PETICION BODY</td>
+            <td>{
+                "Identificacion":6578978,
+                "Nombre":"Guillermo",
+                "Telefono":"56465",
+                "Direccion":"transversal 11",
+                "Fecha_de_nacimiento":"2000-12-09"
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Rspuesta JSON</td>
+            <td>CORRECTO:res.status(200).json({
+                "mensaje":create
+            }) INCORRECTO: res.status(404).json({
+                "mensaje":"algo salio mal"
+            })ERROR:res.status(500).json({
+                "mensaje":error.message
+            })
+            </td>
+        </tr>
+        <tr>
+            <td>PROGRAMADOR</td>
+            <td>Darwin Guerrero</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <table>
+        <tr>
+            <td>ENPOINT DEL ACTUALIZAR Cliente</td>
+        </tr>
+        <tr>
+            <td>Requerimiento</td>
+            <td>No°14</td>
+        </tr>
+        <tr>
+            <td>Nombre del servicio</td>
+            <td>Actualizar cliente</td>
+        </tr>
+        <tr>
+            <td>URL</td>
+            <td>/actualizarclienteDAG/:_id</td>
+        </tr>
+        <tr>
+            <td>Descripción</td>
+            <td>se ingresa el usuario y clave para actualizar el Cliente</td>
+        </tr>
+        <tr>
+            <td>VERBO HTTPS</td>
+            <td>PUT</td>
+        </tr>
+        <tr>
+            <td>HEADER</td>
+            <td>token</td>
+        </tr>
+        <tr>
+            <td>USUARIOS</td>
+            <td>NULL</td>
+        </tr>
+        <tr>
+            <td>PETICION BODY</td>
+            <td>{
+                "Identificacion":6578978,
+                "Nombre":"Guillermo",
+                "Telefono":"56465",
+                "Direccion":"transversal 11",
+                "Fecha_de_nacimiento":"2000-12-09"
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Rspuesta JSON</td>
+            <td>CORRECTO: res.status(200).json({
+                "mensaje": "cliente actualizado exitosamente",
+            });  INCORRECTO: return res.status(404).json({
+                "mensaje": "no se encontró un cliente para actualizar"
+            });ERROR:res.status(500).json({ message: error.message });</td>
+        </tr>
+        <tr>
+            <td>PROGRAMADOR</td>
+            <td>Darwin Guerrero</td>
+        </tr>
+    </table>
+    
+    <br>
+
+    <table>
+        <tr>
+            <td>ENPOINT DEL Mostrar Un Cliente</td>
+        </tr>
+        <tr>
+            <td>Requerimiento</td>
+            <td>No°15</td>
+        </tr>
+        <tr>
+            <td>Nombre del servicio</td>
+            <td>Mostrsar Un cliente</td>
+        </tr>
+        <tr>
+            <td>URL</td>
+            <td>/buscaclienteDAG/:_id</td>
+        </tr>
+        <tr>
+            <td>Descripción</td>
+            <td>se  busca un Cliente</td>
+        </tr>
+        <tr>
+            <td>VERBO HTTPS</td>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <td>HEADER</td>
+            <td>token</td>
+        </tr>
+        <tr>
+            <td>USUARIOS</td>
+            <td>NULL</td>
+        </tr>
+        <tr>
+            <td>PETICION BODY</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Rspuesta JSON</td>
+            <td>CORRECTO:res.status(200).json({
+                "mensaje": "cliente actualizado exitosamente",
+            });INCORRECTO:  return res.status(404).json({
+                "mensaje": "no se encontró un cliente para actualizar"
+            });ERROR: res.status(500).json({ message: error.message });</td>
+        </tr>
+        <tr>
+            <td>PROGRAMADOR</td>
+            <td>Darwin Guerrero</td>
+        </tr>
+    </table>
+
+    <br>
+    <table>
+        <tr>
+            <td>ENPOINT DE ELIMINAR Cliente</td>
+        </tr>
+        <tr>
+            <td>Requerimiento</td>
+            <td>No°16</td>
+        </tr>
+        <tr>
+            <td>Nombre del servicio</td>
+            <td>Eliminar cliente</td>
+        </tr>
+        <tr>
+            <td>URL</td>
+            <td>/borrarcliente/:_id</td>
+        </tr>
+        <tr>
+            <td>Descripción</td>
+            <td>elimina el Cliente</td>
+        </tr>
+        <tr>
+            <td>VERBO HTTPS</td>
+            <td>DELETE</td>
+        </tr>
+        <tr>
+            <td>HEADER</td>
+            <td>token</td>
+        </tr>
+        <tr>
+            <td>USUARIOS</td>
+            <td>NULL</td>
+        </tr>
+        <tr>
+            <td>PETICION BODY</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Rspuesta JSON</td>
+            <td>CORRECTO:res.status(200).json({
+                "mensaje": "cliente eliminado exitosamente",
+                "cliente": cliente
+            }); INCORRECTO:  return res.status(404).json({
+                "mensaje": "no se encontró un cliente para eliminar"
+            });ERROR:res.status(500).json({ message: error.message });</td>
+        </tr>
+        <tr>
+            <td>PROGRAMADOR</td>
+            <td>Darwin Guerrero</td>
+        </tr>
+    </table>
+
+    <br>
+    <table>
+        <tr>
+            <td>ENPOINT DE LISTAR Cliente</td>
+        </tr>
+        <tr>
+            <td>Requerimiento</td>
+            <td>No°17</td>
+        </tr>
+        <tr>
+            <td>Nombre del servicio</td>
+            <td>Listar clientes</td>
+        </tr>
+        <tr>
+            <td>URL</td>
+            <td>/listarclientesDAG</td>
+        </tr>
+        <tr>
+            <td>Descripción</td>
+            <td>listar  Clientes</td>
+        </tr>
+        <tr>
+            <td>VERBO HTTPS</td>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <td>HEADER</td>
+            <td>token</td>
+        </tr>
+        <tr>
+            <td>USUARIOS</td>
+            <td>NULL</td>
+        </tr>
+        <tr>
+            <td>PETICION BODY</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Rspuesta JSON</td>
+            <td>CORRECTO:   res.status(200).json(show) INCORRECTO :   res.status(404).json({
+                "mensaje":"Algo salio mal"
+            })ERROR: res.status(500).json({
+                "mensaje":error.message
+            })</td>
+        </tr>
+        <tr>
+            <td>PROGRAMADOR</td>
+            <td>Darwin Guerrero</td>
+        </tr>
+    </table>
+    <br>
+
+    <h1> INTERESES</h1>
+
+    <table>
+        <tr>
+            <td>ENPOINT DE LISTAR INTERESES</td>
+        </tr>
+        <tr>
+            <td>Requerimiento</td>
+            <td>No°18</td>
+        </tr>
+        <tr>
+            <td>Nombre del servicio</td>
+            <td>Listar intereses</td>
+        </tr>
+        <tr>
+            <td>URL</td>
+            <td>/listarDAG</td>
+        </tr>
+        <tr>
+            <td>Descripción</td>
+            <td>listar  intereses</td>
+        </tr>
+        <tr>
+            <td>VERBO HTTPS</td>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <td>HEADER</td>
+            <td>token</td>
+        </tr>
+        <tr>
+            <td>USUARIOS</td>
+            <td>NULL</td>
+        </tr>
+        <tr>
+            <td>PETICION BODY</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Rspuesta JSON</td>
+            <td>CORRECTO:res.status(201).json({
+                "mensaje": "se listo",
+                "interes": intereses // Opcional: incluir el documento creado en la respuesta
+            });ERROR:res.status(500).json({ message: error.message });</td>
+        </tr>
+        <tr>
+            <td>PROGRAMADOR</td>
+            <td>Darwin Guerrero</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <table>
+        <tr>
+            <td>ENPOINT De Buscar Un Interes</td>
+        </tr>
+        <tr>
+            <td>Requerimiento</td>
+            <td>No°19</td>
+        </tr>
+        <tr>
+            <td>Nombre del servicio</td>
+            <td>Buscar Un Interes</td>
+        </tr>
+        <tr>
+            <td>URL</td>
+            <td>/buscarDAG/:_id</td>
+        </tr>
+        <tr>
+            <td>Descripción</td>
+            <td>Buscar interes</td>
+        </tr>
+        <tr>
+            <td>VERBO HTTPS</td>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <td>HEADER</td>
+            <td>token</td>
+        </tr>
+        <tr>
+            <td>USUARIOS</td>
+            <td>NULL</td>
+        </tr>
+        <tr>
+            <td>PETICION BODY</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Rspuesta JSON</td>
+            <td>CORRECTO:res.status(201).json({
+                "mensaje": "se encontro",
+                "interes": intereses 
+            });ERROR:res.status(500).json({ message: error.message });</td>
+        </tr>
+        <tr>
+            <td>PROGRAMADOR</td>
+            <td>Darwin Guerrero</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <table>
+        <tr>
+            <td>ENPOINT De Actualiza Un Interes</td>
+        </tr>
+        <tr>
+            <td>Requerimiento</td>
+            <td>No°20</td>
+        </tr>
+        <tr>
+            <td>Nombre del servicio</td>
+            <td>Actualizar Un Interes</td>
+        </tr>
+        <tr>
+            <td>URL</td>
+            <td>/actualizarDAG/_id</td>
+        </tr>
+        <tr>
+            <td>Descripción</td>
+            <td>Actualiza Un Interes</td>
+        </tr>
+        <tr>
+            <td>VERBO HTTPS</td>
+            <td>PUT</td>
+        </tr>
+        <tr>
+            <td>HEADER</td>
+            <td>token</td>
+        </tr>
+        <tr>
+            <td>USUARIOS</td>
+            <td>NULL</td>
+        </tr>
+        <tr>
+            <td>PETICION BODY</td>
+            <td>{
+                "Idintere":6,
+                "mes":09,
+                "fecha":"2013-09-04",
+                "valor":89,
+            }</td>
+        </tr>
+        <tr>
+            <td>Rspuesta JSON</td>
+            <td>CORRECTO: res.status(200).json({
+                "mensaje": "interés actualizado exitosamente",
+            });INCORRECTO:return res.status(404).json({
+                "mensaje": "no se encontró un interés para actualizar"
+            });ERROR res.status(500).json({ message: error.message });
+    </td>
+        </tr>
+        <tr>
+            <td>PROGRAMADOR</td>
+            <td>Darwin Guerrero</td>
+        </tr>
+    </table>
+
+    <br>
+    <table>
+        <tr>
+            <td>ENPOINT De Crear Un Interes</td>
+        </tr>
+        <tr>
+            <td>Requerimiento</td>
+            <td>No°21</td>
+        </tr>
+        <tr>
+            <td>Nombre del servicio</td>
+            <td>Crear Un Interes</td>
+        </tr>
+        <tr>
+            <td>URL</td>
+            <td>/crearDAG</td>
+        </tr>
+        <tr>
+            <td>Descripción</td>
+            <td>Crear Un Interes</td>
+        </tr>
+        <tr>
+            <td>VERBO HTTPS</td>
+            <td>POST</td>
+        </tr>
+        <tr>
+            <td>HEADER</td>
+            <td>token</td>
+        </tr>
+        <tr>
+            <td>USUARIOS</td>
+            <td>NULL</td>
+        </tr>
+        <tr>
+            <td>PETICION BODY</td>
+            <td>{
+                "Idintere":6,
+                "mes":09,
+                "fecha":"2013-09-04",
+                "valor":89,
+            }</td>
+        </tr>
+        <tr>
+            <td>Rspuesta JSON</td>
+            <td>CORRECTO:res.status(201).json({
+                "mensaje": "se encontro",
+                "interes": intereses 
+            });ERROR:res.status(500).json({ message: error.message });</td>
+        </tr>
+        <tr>
+            <td>PROGRAMADOR</td>
+            <td>Darwin Guerrero</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <table>
+        <tr>
+            <td>ENPOINT De Eliminar Un Interes</td>
+        </tr>
+        <tr>
+            <td>Requerimiento</td>
+            <td>No°22</td>
+        </tr>
+        <tr>
+            <td>Nombre del servicio</td>
+            <td>Eliminar  Un Interes</td>
+        </tr>
+        <tr>
+            <td>URL</td>
+            <td>/eliminarDAG/:_id</td>
+        </tr>
+        <tr>
+            <td>Descripción</td>
+            <td>EliminarUn Interes</td>
+        </tr>
+        <tr>
+            <td>VERBO HTTPS</td>
+            <td>DELETE</td>
+        </tr>
+        <tr>
+            <td>HEADER</td>
+            <td> token</td>
+        </tr>
+        <tr>
+            <td>USUARIOS</td>
+            <td>NULL</td>
+        </tr>
+        <tr>
+            <td>PETICION BODY</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Rspuesta JSON</td>
+            <td>CORRECTO: return res.status(404).json({
+                "mensaje": "no se encontró un interés para eliminar"
+            });INCORRECTO:  res.status(200).json({
+                "mensaje": "interés eliminado exitosamente",
+                "interes": intereses
+            });ERROR:res.status(500).json({ message: error.message });</td>
+        </tr>
+        <tr>
+            <td>PROGRAMADOR</td>
+            <td>Darwin Guerrero</td>
+        </tr>
+    </table>
+</body>
+</html>

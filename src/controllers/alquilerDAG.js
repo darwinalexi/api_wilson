@@ -14,9 +14,15 @@ export const createalqulerDAG = async (req, res) => {
 
 
         const alquilere = await alquiler.create(req.body);
+       if (alquilere) {
         res.status(201).json({
             "mensaje": "se creó",
         });
+       }else{
+        res.status(404).json({
+            "mensaje": "algo salio mal",
+        });
+       }
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
@@ -72,7 +78,7 @@ export const update_alquilers_for_id_DAG = async (req, res) => {
             });
         }
         res.status(200).json({
-            "mensaje": "cliente actualizado exitosamente",
+            "mensaje": "Alquiler actualizado exitosamente",
         });
     } catch (error) {
         res.status(500).json({
@@ -90,7 +96,7 @@ export const delete_alquilers_for_id_DAG = async (req, res) => {
             });
         }
         res.status(200).json({
-            "mensaje": "cliente eliminado exitosamente",
+            "mensaje": "alquilre eliminado exitosamente",
         });
     } catch (error) {
         res.status(500).json({
@@ -98,6 +104,5 @@ export const delete_alquilers_for_id_DAG = async (req, res) => {
         });
     }
 };
-
 
 
