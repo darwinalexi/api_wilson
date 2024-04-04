@@ -23,10 +23,20 @@ const interesesDAG = new mongoose.Schema({
         type: Number,
         required: true,
         integer: true
+    },
+    estado:{
+        type:String,
+        required:true
+    },
+    cliente:{
+        type:Number,
+        required:true
     }
-}, {
+}, 
+    {
     timestamps: true
-});
+    }
+);
 
 const Intereses = mongoose.model("Intereses", interesesDAG);
 

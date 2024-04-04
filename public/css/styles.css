@@ -11,6 +11,8 @@ td{
 table{
     border: 3px black solid;
     width: 45%;
+    display: flex;
+    justify-content: center;
 }
 tr{
     display: flex;

@@ -6,6 +6,7 @@ import { routeArcticleDAG } from './src/router/router.articulosDAG.js';
 import { rutaclienteDAG } from './src/router/router.clientesDAG.js';
 import { rutaalqulierDAG } from './src/router/router.alquiler.js';
 import { rutalogin } from './src/router/authDAG.js';
+import { routeconsulDAG } from './src/router/consultas.js';
 
 const server= express()
 const port = 3000;
@@ -22,7 +23,7 @@ server.use(routeArcticleDAG)
 server.use(rutaclienteDAG)
 server.use(rutaalqulierDAG)
 server.use(rutalogin)
-
+server.use(routeconsulDAG)
 
 server.use(express.static('./public'))
 server.set('view engine', 'ejs');

@@ -18,7 +18,7 @@ export const validatoralquilerDAG=[
     check('fecha','se necesita una fecha').notEmpty().custom(isValidDate),
     check('Mes','se necesita un mesr').notEmpty().isNumeric(),
     check('Descripcion','se necesita un DESCRIPCION').notEmpty().isString(),
-    check('Interes','se necesita un interesr').notEmpty().isNumeric(),
+    check('Interes_por_pagar','se necesita un interesr').notEmpty().isNumeric(),
     check('Cliente','se necesita un cliente').notEmpty().isNumeric(),
     check('Articulo','se necesita un articulo').notEmpty().isNumeric(),
 

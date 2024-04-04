@@ -24,7 +24,7 @@ import mongoose from 'mongoose'
             type: String,
             required:true
           },
-          Interes:{
+          Interes_por_pagar:{
             type: Number,
             required:true
           },

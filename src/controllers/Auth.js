@@ -65,7 +65,7 @@ export const validarToken = async (req, res, next) => {
                 next(); // Llama a next() para pasar al siguiente middleware o controlador
             } catch (error) {
                 // Si el token es inválido o ha expirado, envía un mensaje de error
-                res.status(401).json({ message: "Token inválido o ha expirado" });
+                res.status(441).json({ message: "Token inválido o ha expirado" });
             }
         } else {
             res.status(401).json({ message: "Token no proporcionado" });

@@ -4,7 +4,7 @@ import { validarToken } from "../controllers/Auth.js";
 import { validatorclienteDAG } from "../middlewares/cliente.middleware.js";
 
 export const rutaclienteDAG = Router();
-rutaclienteDAG.post("/crearClienteDAG", validarToken,validatorclienteDAG, createClienteDAG)
+rutaclienteDAG.post("/crearClienteDAG",validatorclienteDAG, createClienteDAG)
 rutaclienteDAG.get("/listarclientesDAG", validarToken,showclientesDAG)
 rutaclienteDAG .get("/buscaclienteDAG/:_id", validarToken,show_clienteDAG_for_id)
 rutaclienteDAG .delete("/borrarcliente/:_id",validarToken, delete_for_idDAG)
