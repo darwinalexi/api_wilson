@@ -1201,5 +1201,121 @@
             <td>Darwin Guerrero</td>
         </tr>
     </table>
+
+    <br>
+    
+    <h1>Consultas</h1>
+
+<table>
+    <tr>
+        <td>ENPOINT De 1° consulta</td>
+    </tr>
+    <tr>
+        <td>Requerimiento</td>
+        <td>No°23</td>
+    </tr>
+    <tr>
+        <td>Nombre del servicio</td>
+        <td>1° consulta</td>
+    </tr>
+    <tr>
+        <td>URL</td>
+        <td>/consulta1DAG</td>
+    </tr>
+    <tr>
+        <td>Descripción</td>
+        <td>1° consulta</td>
+    </tr>
+    <tr>
+        <td>VERBO HTTP</td>
+        <td>GET</td>
+    </tr>
+    <tr>
+        <td>HEADER</td>
+        <td>NULL</td>
+    </tr>
+    <tr>
+        <td>USUARIOS</td>
+        <td>NULL</td>
+    </tr>
+    <tr>
+        <td>PETICION BODY</td>
+        <td>{
+        "Identificacion":6,
+        "Nombre":"jose"    
+        }</td>
+    </tr>
+    <tr>
+        <td>Rspuesta JSON</td>
+        <td>CORRECTO:res.status(200).json({
+            nombreCliente,
+            interesesPagados,
+          });
+ERROR: res.status(500).json({
+    mensaje: "Error al realizar en la consulta",
+    error: error.message,
+  });</td>
+    </tr>
+    <tr>
+        <td>PROGRAMADOR</td>
+        <td>Darwin Guerrero</td>
+    </tr>
+</table>
+<br>
+    <table>
+        <tr>
+            <td>ENPOINT De 2° consulta</td>
+        </tr>
+        <tr>
+            <td>Requerimiento</td>
+            <td>No°24</td>
+        </tr>
+        <tr>
+            <td>Nombre del servicio</td>
+            <td>2° consulta</td>
+        </tr>
+        <tr>
+            <td>URL</td>
+            <td>/conSULTA2dag</td>
+        </tr>
+        <tr>
+            <td>Descripción</td>
+            <td>listar por mes por Interes_por_pagar</td>
+        </tr>
+        <tr>
+            <td>VERBO HTTP</td>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <td>HEADER</td>
+            <td>NULL</td>
+        </tr>
+        <tr>
+            <td>USUARIOS</td>
+            <td>NULL</td>
+        </tr>
+        <tr>
+            <td>PETICION BODY</td>
+            <td>{
+            "Identificacion":6,
+            "Nombre":"jose"    
+            }</td>
+        </tr>
+        <tr>
+            <td>Rspuesta JSON</td>
+            <td>CORRECTO:res.status(200).json({
+                "nombre":cliente.Nombre,
+                "mensaje":consulta
+            })
+    ERROR:  res.status(500).json{
+        mensaje: "Error al realizar en la consulta",
+        error: error.message,
+      }</td>
+        </tr>
+        <tr>
+            <td>PROGRAMADOR</td>
+            <td>Darwin Guerrero</td>
+        </tr>
+    </table>
 </body>
 </html>

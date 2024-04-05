@@ -3,5 +3,5 @@ import {listarInteresesPagados, listar_mes_interes_por_pagar} from "../controlle
 
 export const routeconsulDAG=Router();
 
-routeconsulDAG.get("/consulta", listarInteresesPagados)
-routeconsulDAG.get("/con", listar_mes_interes_por_pagar)
+routeconsulDAG.get("/consulta1DAG", listarInteresesPagados)
+routeconsulDAG.get("/conSULTA2dag", listar_mes_interes_por_pagar)

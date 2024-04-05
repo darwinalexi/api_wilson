@@ -1,13 +1,13 @@
 import Intereses from "../model/ModelinteresesDAG.js";
 import { alquiler } from "../model/ModelsAlquilersDAG.js";
+import {  articulo } from "../model/ModelsArticulosDAG.js";
 import Clientes from "../model/modelclienteDAG.js";
-import { articulo } from "../model/ModelsArticulosDAG.js";
-import { ResultWithContextImpl } from "express-validator/src/chain/context-runner-impl.js";
+
+
 
 export const listarInteresesPagados = async (req, res) => {
   try {
-    const { Identificacion, Nombre } = req.body;
-
+    const { Identificacion, Nombre,_id } = req.body;
     const cliente = await Clientes.findOne({ Identificacion, Nombre });
 
     if (!cliente) {
@@ -17,12 +17,20 @@ export const listarInteresesPagados = async (req, res) => {
     } else {
       const nombreCliente = cliente.Nombre;
 
-      const interesesPagados = await Intereses.find({ cliente:Identificacion, estado: "pagado" })  
-      .populate({path: "alquiler",select: "Articulo Mes valor",}).select("-_id").select("-cliente -Idinteres -fecha");
-
+      const prestamo = await Intereses.find({ cliente: Identificacion, estado: "no pagado" }).populate({ path: "alquiler", select: "Articulo Mes valor" }).select(" -cliente -Idinteres -fecha");
+      
+      const nombre_articulo = await articulo.findOne({_id:_id},{nombre:1});
+//// toca haccer  la union 
+      console.log(nombre_articulo)
+   
+const respuesta ={
+  nombreCliente,
+  prestamo,
+  nombre_articulo
+}
+console.log(respuesta)
       return res.status(200).json({
-        nombreCliente,
-        interesesPagados,
+       "consulta":respuesta
       });
     }
   } catch (error) {
@@ -32,6 +40,7 @@ export const listarInteresesPagados = async (req, res) => {
     });
   }
 };
+
 
 export const listar_mes_interes_por_pagar= async(req, res)=>{
     try {
